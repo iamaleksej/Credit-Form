@@ -1,0 +1,368 @@
+$white:	#ffffff
+$green: #269750
+$grey: #e0e0e0
+$black: #000000
+@mixin arial-normal() 
+	font-family: Arial, sans-serif
+	font-weight: normal
+@mixin arial-bold() 
+	font-family: Arial, sans-serif
+	font-weight: bold
+@mixin tahoma-normal() 
+	font-family: Tahoma, sans-serif
+	font-weight: normal
+
+.wrapper
+	height: 100vh
+	width: 100vw
+	background-color: $white
+
+.container
+	width: auto
+	height: 100%
+	margin-left: auto
+	margin-right: auto
+	display: flex
+	flex-flow: wrap
+	align-items: center
+	justify-content: center
+
+.wrap
+	display: none
+	align-items: flex-start
+	justify-content: center
+
+.wrap_button
+	height: 82px
+	display: flex
+	align-items: flex-start
+	justify-content: center
+
+.box-left
+	width: 240px
+	height: 400px
+
+.box-right
+	background: linear-gradient(290de, $grey, $white, $grey)
+	width: 354px
+	height: 392px
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.3)
+
+.arrow
+	width: 0
+	height: 0
+	border-top: 30px solid transparent
+	border-right: 20px solid $green
+	border-left: 7px solid transparent
+	border-bottom: 30px solid transparent
+
+.section-header
+	background-color: $green
+	width: 100%
+	height: 60px
+	position: relative
+
+.title
+	padding-left: 30px
+	padding-right: 30px
+	@include arial-normal()
+	font-size: 18px
+	color: $white
+	width: 294px
+	position: relative
+	padding-top: 14px
+
+.close 
+	float: right
+	padding: 6px
+	position: absolute
+	z-index: 1
+	right: 0
+
+.show
+	display: flex
+
+.section
+	padding-left: 23px
+	display: none
+
+.show-section
+	display: block
+
+.section-title
+	position: relative
+	margin-top: 8px
+
+.text-top
+	height: 70px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	color: $black
+	@include arial-bold()
+	font-style: 14px
+	padding-right: 25px
+
+.span 
+	&_color_green
+		color: $green
+		font-size: 25px
+	&_color_grey 
+		color: $grey
+		font-style: italic
+
+.scale 
+	height: 90px
+	display: flex
+	flex-flow: column
+	position: relative
+	&__input
+		position: absolute
+		bottom: 0
+
+.label
+	color: $black
+	@include arial-normal()
+	font-size: 12px
+	&_bold
+		font-weight: bold
+
+.button
+	margin: auto
+	width: 145px
+	height: 40px
+	@include arial-bold()
+	color: $white
+	text-decoration: none
+	text-shadow: 0 -1px 2px rgba(0,0,0,0.2)
+	padding: .5em 1em
+	outline: none
+	border-radius: 5px
+	border: 1px solid #269952
+	background: linear-gradient(rgb(52,190,105), rgb(43,160,88)) rgb(52,190,105)
+	cursor: pointer
+
+.limit-number 
+	display: flex
+	justify-content: space-between
+	position: relative
+	top: -9px
+	&__first-last
+		@include tahoma-normal()
+		font-size: 11px
+		color: $black
+
+.scale-slider 
+	background: linear-gradient(#d2d2d2, $white, #d2d2d2)
+	width: 270px
+	height: 12px
+	border-radius: 10px
+	position: relative
+	border: 1px solid #a7a7a7
+	margin-top: 20px
+	&_filling, &_filling2 
+		background: repeating-linear-gradient(315deg, #2dbc5d, #2dbc5d 6px, #3ac977 6px, #3ac977 12px)
+		width: 0
+		height: 13px
+		border-radius: 10px 0 0 10px
+		position: absolute
+		left: -1px
+	&_slider, &_slider2
+		width: 100%
+		height: 14px
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		background-color: transparent
+		border-radius: 10px
+		outline: none
+		position: relative
+		z-index: 1
+		top: -1px
+		margin: 0
+	&_slider::-webkit-slider-thumb, &_slider2::-webkit-slider-thumb
+		-webkit-appearance: none 
+		-moz-appearance: none
+		appearance: none
+		width: 20px
+		height: 20px
+		cursor: pointer
+		position: relative
+		left: -2px
+		border: 0
+		background: url('../img/slider-square.png')
+	&_slider::-moz-range-thumb, &_slider2::-moz-range-thumb
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		width: 20px
+		height: 20px
+		cursor: pointer
+		position: relative
+		left: -2px
+		border: 0
+		background: url('../img/slider-square.png')
+	&_slider::-ms-thumb, &_slider2::-ms-thumb 
+		-webkit-appearance: none
+		-moz-appearance: none
+		appearance: none
+		width: 20px
+		height: 20px
+		cursor: pointer
+		position: relative
+		left: -2px
+		border: 0
+		background: url('../img/slider-square.png')
+	&_pointer, &_pointer2
+		@include tahoma-normal()
+		position: absolute
+		top: 0
+		left: 0
+		margin-top: 26px
+		margin-left: 1px
+		width: 61px
+		height: 20px
+		background: #38c674
+		padding: 0px
+		-webkit-border-radius: 3px
+		-moz-border-radius: 3px
+		border-radius: 3px
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 11px
+		color: $white
+		z-index: 1
+	&_pointer:after, &_pointer2:after
+		content: ''
+		position: absolute
+		border-style: solid
+		border-width: 0 3px 3px
+		border-color: #38c674 transparent
+		display: block
+		width: 0
+		bottom: 20px
+		left: 26px
+
+.under-scale 
+		position: relative
+		top: -5px
+
+.field 
+	@include arial-normal()
+	border: 1px solid #0d7f39
+	border-radius: 5px
+	background: -webkit-linear-gradient(#d2d2d2 -10px, $white 10px, #d2d2d2 45px)
+	background: -o-linear-gradient(#d2d2d2 -10px, $white 10px, #d2d2d2 45px)
+	background: linear-gradient(#d2d2d2 -10px, $white 10px, #d2d2d2 45px)
+	margin-top: 7px
+	margin-bottom: 7px
+	font-size: 12px
+	outline: none
+	padding: 0 5px 0 5px
+
+.input 
+	height: 18px
+	box-shadow: none
+	&:focus::-webkit-input-placeholder 
+		color:transparent
+	&:focus:-moz-placeholder 
+		color:transparent
+	&:focus::-moz-placeholder c
+		color:transparent
+	&:focus:-ms-input-placeholder 
+		color:transparent
+	&[type="number"]::-webkit-outer-spin-button,
+	&[type="number"]::-webkit-inner-spin-button 
+		-webkit-appearance: none
+		margin: 0
+	&[type="number"] 
+		-moz-appearance: textfield
+	&[type=number]::-webkit-inner-spin-button,
+	&[type=number]::-webkit-outer-spin-button 
+		-webkit-appearance: none
+		margin: 0
+
+.select 
+	height: 20px
+	-webkit-appearance: none
+	-moz-appearance: none
+	-ms-appearance: none
+	background: url('../img/select-arrow.png') no-repeat right, linear-gradient(#d2d2d2 -10px, $white 10px, #d2d2d2 45px)
+
+.year
+	&-delay 
+		display: flex
+		justify-content: space-between
+		height: 60px
+
+	&__input 
+		width: 77px
+
+	&__input_margin-b 
+		margin-bottom: 3px
+
+	&_error 
+		color: #ff0000
+		position: absolute
+		z-index: 1
+		display: none
+
+.dis-block 
+	display: block
+
+.delay__select 
+	width: 207px
+
+
+.vote-russia 
+	width: 110px
+	height: 120px
+
+.radio 
+	width: 90%
+	margin-top: 10px
+	display: flex
+	justify-content: space-between
+	&__label 
+		position: relative
+		top: -3.5px
+		left: -4px
+
+.section3-data
+	&__select
+		width: 305px
+	&_wrap 
+		display: flex
+		flex-wrap: nowrap
+		justify-content: space-between
+		align-items: flex-start
+		width: 305px
+		height: 42px
+	&__label_margin-t 
+		position: relative
+		margin-top: 4px
+
+.section4-data
+	&_height 
+		height: 50px
+	&__input 
+		width: 305px
+	&_wrap 
+		height: 88px
+		flex-wrap: nowrap
+
+.section4
+	&__label_width 
+		width: 305px
+	&__input_wrap 
+		width: 135px
+		position: relative
+		left: -125px
+		top: 22px
+	&__input 
+		width: 305px
+
+::placeholder 
+	color: $black
+	padding-left: 14px

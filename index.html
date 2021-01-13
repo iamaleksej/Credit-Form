@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Bank Form Task</title>
+    <link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>    
+</head>
+<body class="body">
+    <div class="wrapper">
+    	<div class="container">
+            <div class="box-left">
+                <img class="box-left__image" src="./img/box-left.jpg" alt="">
+            </div>
+            <div class="wrap">
+                <div class="arrow"></div>
+                <div class="box-right">
+                    <div class="section-header">  
+                        <img class="close" src="./img/close.png" alt="">
+                        <h1 class="title">Рассчитайте сумму ежемесячного <br>платежа в нескольких банках</h1>
+                    </div>
+                    <section class="section section1 show-section" data-section="1">
+                        <div class="text-top">
+                            <h2 class="section-title">Информация о кредите</h2>
+                            <h2 class="section-step-text">Шаг: <span class="span_color_green">1</span> из 4</h2>
+                        </div>
+                        <form class="form">
+                            <div class="scale">
+                                <label class="label label_bold">Сумма кредита: <span class="span_color_grey">(рублей)</span></label>
+                                <div class="scale-slider">
+                                    <div class="scale-slider_filling"></div>
+                                    <div class="scale-slider_pointer"></div>
+                                    <input class="scale-slider_slider" type="range" min="50000" max="1000000" step="1" value="105000" />
+                                    <img class="under-scale" src="./img/under-scale2.png" alt="">
+                                    <div class="limit-number">
+                                        <p class="limit-number__first-last">50 000</p>
+                                        <p class="limit-number__first-last">1 000 000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scale">
+                                <label class="label label_bold">Срок кредитования: <span class="span_color_grey">(месяцев)</span></label>
+                                <div class="scale-slider">
+                                    <div class="scale-slider_filling2"></div>
+                                    <div class="scale-slider_pointer2"></div>
+                                    <input class="scale-slider_slider2" type="range" min="1" max="60" step="1" value="4" />
+                                    <img class="under-scale" src="./img/under-scale2.png" alt="">
+                                    <div class="limit-number">
+                                        <p class="limit-number__first-last">01</p>
+                                        <p class="limit-number__first-last">60</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="section section2" data-section="2">
+                        <div class="text-top">
+                            <h2 class="section-title">Информация о заемщике</h2>
+                            <h2 class="section-step-text">Шаг: <span class="span_color_green">2</span> из 4</h2>
+                        </div>
+                        <form class="form">
+                            <div class="year-delay">
+                                <div class="year">
+                                    <label class="label">Ваш возраст:</label>
+                                    <input class="input year__input year__input_margin-b field " type="number" min="18" max="60" onkeyup="this.value = this.value.replace (/\D/, '')">
+                                    <p class="year_error label">Ваш возраст должны быть 18-60</p>
+                                </div>
+                                <div class="delay">
+                                    <label class="label">Есть просрочки по кредитам? </label>
+                                    <select class="select delay__select field" size="1">
+                                        <option class="option" label=" "></option>
+                                        <option class="option" value="">нет</option>
+                                        <option class="option" value="">есть текущие</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="vote-russia">
+                                <label class="label">Вы гражданин РФ?</label>
+                                <div class="radio">
+                                    <div class="radio_yes">
+                                        <input class="radio__input" type="radio">
+                                        <label class="label radio__label">да</label>
+                                    </div>
+                                    <div class="radio_no">
+                                        <input class="radio__input" type="radio">
+                                        <label class="label radio__label">нет</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="section section3" data-section="3">
+                        <div class="text-top">
+                            <h2 class="section-title section2-title">Информация о заемщике</h2>
+                            <h2 class="section-step-text">Шаг: <span class="span_color_green">3</span> из 4</h2>
+                        </div>
+                        <form class="form">
+                            <div class="section-data">
+                                <label class="label"> Где Вы зарегистрированы?</label>
+                                <select class="select section3-data__select field">
+                                    <option class="option" label=" "></option>
+                                    <optgroup class="option" label="РФ">
+                                        <option>Москва</option>
+                                        <option>Санкт-Петербург</option>
+                                    </optgroup>    
+                                    <optgroup class="option" label="Украина"></optgroup>
+                                    <optgroup class="option" label="Беларуссия"></optgroup>
+                                </select>
+                            </div>
+                            <div class="section-data">
+                                <label class="label">Где Вы проживаете?</label>
+                                <select class="select section3-data__select field">
+                                    <option class="option" label=" "></option>
+                                    <optgroup class="option" label="РФ">
+                                        <option>Москва</option>
+                                        <option>Санкт-Петербург</option>
+                                    </optgroup>                                        
+                                    <optgroup class="option" label="Украина"></optgroup>
+                                    <optgroup class="option" label="Беларуссия"></optgroup>
+                                </select>
+                            </div>
+                            <div class="section-data">
+                                <label class="label">Стаж работы:</label>
+                                <select class="select section3-data__select field">
+                                    <option class="option" label=" "></option>
+                                    <option class="option">1 год</option>
+                                    <option class="option">2-3 года</option>
+                                    <option class="option">> 3 лет</option>
+                                </select>
+                            </div>
+                            <div class="section-data section3-data_wrap">
+                                <label class="label section3-data__label_margin-t">Ваш подтвержденный <br>доход (руб.): </label>
+                                <input class="input field" type="number" onkeyup="this.value = this.value.replace (/\D/, '')">
+                            </div>
+                        </form>
+                    </section>
+
+                    <section class="section section4" data-section="4">
+                        <div class="text-top">
+                            <h2 class="section-title section2-title">Информация о заемщике</h2>
+                            <h2 class="section-step-text">Шаг: <span class="span_color_green">4</span> из 4</h2>
+                        </div>
+                        <form class="form">
+                            <div class="section-data">
+                                <label class="label">Ваше имя:</label>
+                                <input class="input section4__input field" type="text">
+                            </div>
+                            <div class="section-data">
+                                <label class="label">E-mail:</label>
+                                <input class="input section4__input field" type="email">
+                            </div>
+                            <div class="section-data section4-data_wrap">
+                                <label class="label section4__label_width">Мобильный телефон:</label>
+                                <input class="input section4__input_wrap field" type="text" placeholder="+7(___)________">
+                            </div>
+                        </form>
+                    </section>
+
+                    <div class="wrap_button">
+                        <button class="button">Продолжить</button>
+                    </div>
+            
+                </div>
+            </div>
+
+    	</div>
+    </div>
+
+    
+
+<script src="./js/script.js"></script>
+</body>
+</html>
